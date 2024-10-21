@@ -1,0 +1,29 @@
+[tool.poetry]
+name = "haraka-sv"
+version = "0.0.1"
+description = "HarakaV2 - 512 in Hardware, semi-optimized for fun"
+authors = ["Jan Eckert <jan.eckert@tum.de>"]
+readme = "README.md"
+packages = [
+    {include = "src"},
+]
+
+[tool.poetry.dependencies]
+python = ">=3.11, <3.12"
+cocotb = "1.8.1"
+cocotb-test = "0.2.5"
+
+[tool.poetry.group.dev.dependencies]
+pytest = "^8.3.3"
+pytest-xdist = "^3.6.1"
+pytest-sugar = "^1.0.0"
+
+[tool.pytest.ini_options]
+minversion = "8.0"
+addopts = ""
+pythonpath = "."
+testpaths = ["src/tests"]
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
